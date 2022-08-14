@@ -1,0 +1,301 @@
+//
+//Written by GowinSynthesis
+//Product Version "GowinSynthesis V1.9.8.06-1"
+//Mon Aug 08 12:13:47 2022
+
+//Source file index table:
+//file0 "\C:/cygwin64/Proj/HM65256BLSP/HM65256BLSP/src/HM65256BLSP.v"
+`timescale 100 ps/100 ps
+module RAM (
+  Address,
+  Data,
+  OE,
+  WE,
+  CE
+)
+;
+input [14:0] Address;
+inout [7:0] Data;
+input OE;
+input WE;
+input CE;
+wire OE_d;
+wire WE_d;
+wire CE_d;
+wire n25_4;
+wire Data_0_7;
+wire n25_5;
+wire n25_6;
+wire n25_7;
+wire n35_1;
+wire n36_1;
+wire n37_1;
+wire n38_1;
+wire n31_2;
+wire n32_1;
+wire n33_1;
+wire n34_1;
+wire [14:0] Address_d;
+wire [7:0] Data_in;
+wire [14:0] address_latch;
+wire VCC;
+wire GND;
+  IBUF Address_0_ibuf (
+    .O(Address_d[0]),
+    .I(Address[0]) 
+);
+  IBUF Address_1_ibuf (
+    .O(Address_d[1]),
+    .I(Address[1]) 
+);
+  IBUF Address_2_ibuf (
+    .O(Address_d[2]),
+    .I(Address[2]) 
+);
+  IBUF Address_3_ibuf (
+    .O(Address_d[3]),
+    .I(Address[3]) 
+);
+  IBUF Address_4_ibuf (
+    .O(Address_d[4]),
+    .I(Address[4]) 
+);
+  IBUF Address_5_ibuf (
+    .O(Address_d[5]),
+    .I(Address[5]) 
+);
+  IBUF Address_6_ibuf (
+    .O(Address_d[6]),
+    .I(Address[6]) 
+);
+  IBUF Address_7_ibuf (
+    .O(Address_d[7]),
+    .I(Address[7]) 
+);
+  IBUF Address_8_ibuf (
+    .O(Address_d[8]),
+    .I(Address[8]) 
+);
+  IBUF Address_9_ibuf (
+    .O(Address_d[9]),
+    .I(Address[9]) 
+);
+  IBUF Address_10_ibuf (
+    .O(Address_d[10]),
+    .I(Address[10]) 
+);
+  IBUF Address_11_ibuf (
+    .O(Address_d[11]),
+    .I(Address[11]) 
+);
+  IBUF Address_12_ibuf (
+    .O(Address_d[12]),
+    .I(Address[12]) 
+);
+  IBUF Address_13_ibuf (
+    .O(Address_d[13]),
+    .I(Address[13]) 
+);
+  IBUF Address_14_ibuf (
+    .O(Address_d[14]),
+    .I(Address[14]) 
+);
+  IBUF OE_ibuf (
+    .O(OE_d),
+    .I(OE) 
+);
+  IBUF WE_ibuf (
+    .O(WE_d),
+    .I(WE) 
+);
+  IBUF CE_ibuf (
+    .O(CE_d),
+    .I(CE) 
+);
+  IOBUF Data_0_iobuf (
+    .O(Data_in[0]),
+    .IO(Data[0]),
+    .I(n38_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_1_iobuf (
+    .O(Data_in[1]),
+    .IO(Data[1]),
+    .I(n37_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_2_iobuf (
+    .O(Data_in[2]),
+    .IO(Data[2]),
+    .I(n36_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_3_iobuf (
+    .O(Data_in[3]),
+    .IO(Data[3]),
+    .I(n35_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_4_iobuf (
+    .O(Data_in[4]),
+    .IO(Data[4]),
+    .I(n34_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_5_iobuf (
+    .O(Data_in[5]),
+    .IO(Data[5]),
+    .I(n33_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_6_iobuf (
+    .O(Data_in[6]),
+    .IO(Data[6]),
+    .I(n32_1),
+    .OEN(Data_0_7) 
+);
+  IOBUF Data_7_iobuf (
+    .O(Data_in[7]),
+    .IO(Data[7]),
+    .I(n31_2),
+    .OEN(Data_0_7) 
+);
+  LUT3 n25_s0 (
+    .F(n25_4),
+    .I0(n25_5),
+    .I1(n25_6),
+    .I2(n25_7) 
+);
+defparam n25_s0.INIT=8'h80;
+  LUT3 Data_0_s3 (
+    .F(Data_0_7),
+    .I0(CE_d),
+    .I1(OE_d),
+    .I2(WE_d) 
+);
+defparam Data_0_s3.INIT=8'hEF;
+  LUT4 n25_s1 (
+    .F(n25_5),
+    .I0(address_latch[12]),
+    .I1(address_latch[13]),
+    .I2(address_latch[14]),
+    .I3(CE_d) 
+);
+defparam n25_s1.INIT=16'h0001;
+  LUT4 n25_s2 (
+    .F(n25_6),
+    .I0(address_latch[8]),
+    .I1(address_latch[9]),
+    .I2(address_latch[10]),
+    .I3(address_latch[11]) 
+);
+defparam n25_s2.INIT=16'h0001;
+  LUT4 n25_s3 (
+    .F(n25_7),
+    .I0(address_latch[4]),
+    .I1(address_latch[5]),
+    .I2(address_latch[6]),
+    .I3(address_latch[7]) 
+);
+defparam n25_s3.INIT=16'h0001;
+  DFFN address_latch_13_s1 (
+    .Q(address_latch[13]),
+    .D(Address_d[13]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_12_s1 (
+    .Q(address_latch[12]),
+    .D(Address_d[12]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_11_s1 (
+    .Q(address_latch[11]),
+    .D(Address_d[11]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_10_s1 (
+    .Q(address_latch[10]),
+    .D(Address_d[10]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_9_s1 (
+    .Q(address_latch[9]),
+    .D(Address_d[9]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_8_s1 (
+    .Q(address_latch[8]),
+    .D(Address_d[8]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_7_s1 (
+    .Q(address_latch[7]),
+    .D(Address_d[7]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_6_s1 (
+    .Q(address_latch[6]),
+    .D(Address_d[6]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_5_s1 (
+    .Q(address_latch[5]),
+    .D(Address_d[5]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_4_s1 (
+    .Q(address_latch[4]),
+    .D(Address_d[4]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_3_s1 (
+    .Q(address_latch[3]),
+    .D(Address_d[3]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_2_s1 (
+    .Q(address_latch[2]),
+    .D(Address_d[2]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_1_s1 (
+    .Q(address_latch[1]),
+    .D(Address_d[1]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_0_s1 (
+    .Q(address_latch[0]),
+    .D(Address_d[0]),
+    .CLK(CE_d) 
+);
+  DFFN address_latch_14_s1 (
+    .Q(address_latch[14]),
+    .D(Address_d[14]),
+    .CLK(CE_d) 
+);
+  RAM16SDP4 ram_ram_0_0_s (
+    .DO({n35_1,n36_1,n37_1,n38_1}),
+    .DI(Data_in[3:0]),
+    .WAD(address_latch[3:0]),
+    .RAD(Address_d[3:0]),
+    .WRE(n25_4),
+    .CLK(WE_d) 
+);
+  RAM16SDP4 ram_ram_0_1_s (
+    .DO({n31_2,n32_1,n33_1,n34_1}),
+    .DI(Data_in[7:4]),
+    .WAD(address_latch[3:0]),
+    .RAD(Address_d[3:0]),
+    .WRE(n25_4),
+    .CLK(WE_d) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* RAM */

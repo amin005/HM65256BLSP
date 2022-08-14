@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9" package="QFN88" speed="6" partNumber="GW1NR-LV9QN88C6/I5"/>
+    <FileList>
+        <File path="C:\cygwin64\Proj\HM65256BLSP\HM65256BLSP\src\HM65256BLSP.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_balance" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="C:\cygwin64\Proj\HM65256BLSP\HM65256BLSP\impl\gwsynthesis\HM65256BLSP.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

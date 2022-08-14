@@ -1,0 +1,9 @@
+-d C:\cygwin64\Proj\HM65256BLSP\HM65256BLSP\impl\gwsynthesis\HM65256BLSP.vg
+-p GW1NR-9-QFN88-6
+-pn GW1NR-LV9QN88C6/I5
+-cfg C:\cygwin64\Proj\HM65256BLSP\HM65256BLSP\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
